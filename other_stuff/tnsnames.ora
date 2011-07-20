@@ -1,0 +1,238 @@
+# ############################################################################
+# PRODUCTION                                                                 #
+# ############################################################################
+
+RDTS =
+  (DESCRIPTION =
+    (ADDRESS = (PROTOCOL = TCP)(HOST = boron.duhs.duke.edu)(PORT = 1521))
+    (CONNECT_DATA =
+      (SERVER = DEDICATED)
+      (SERVICE_NAME = rdts)))
+
+CALGBPROD3 =
+ (DESCRIPTION = 
+  (ADDRESS_LIST =
+    (LOAD_BALANCE=off)
+    (FAILOVER=on)
+    (ADDRESS = (PROTOCOL = TCP)(HOST = selenium.duhs.duke.edu)(PORT = 1521))
+    (ADDRESS = (PROTOCOL = TCP)(HOST = tellurium.duhs.duke.edu)(PORT = 1521))
+  )
+  (CONNECT_DATA =
+    (SERVICE_NAME = calgbprod3)))
+
+CALGBPROD =
+ (DESCRIPTION = 
+  (ADDRESS_LIST =
+    (LOAD_BALANCE=off)
+    (FAILOVER=on)
+    (ADDRESS = (PROTOCOL = TCP)(HOST = selenium.duhs.duke.edu)(PORT = 1521))
+    (ADDRESS = (PROTOCOL = TCP)(HOST = tellurium.duhs.duke.edu)(PORT = 1521))
+  )
+  (CONNECT_DATA =
+    (SERVICE_NAME = calgbprod3)))
+
+CALP =
+ (DESCRIPTION = 
+  (ADDRESS_LIST =
+    (LOAD_BALANCE=off)
+    (FAILOVER=on)
+    (ADDRESS = (PROTOCOL = TCP)(HOST = selenium.duhs.duke.edu)(PORT = 1521))
+    (ADDRESS = (PROTOCOL = TCP)(HOST = tellurium.duhs.duke.edu)(PORT = 1521))
+  )
+  (CONNECT_DATA =
+    (SERVICE_NAME = calgbprod3)))
+
+
+CALP.DUHS.DUKE.EDU =
+ (DESCRIPTION = 
+  (ADDRESS_LIST =
+    (LOAD_BALANCE=off)
+    (FAILOVER=on)
+    (ADDRESS = (PROTOCOL = TCP)(HOST = selenium.duhs.duke.edu)(PORT = 1521))
+    (ADDRESS = (PROTOCOL = TCP)(HOST = tellurium.duhs.duke.edu)(PORT = 1521))
+  )
+  (CONNECT_DATA =
+    (SERVICE_NAME = calgbprod3)))
+	
+	
+prod3 =
+ (DESCRIPTION = 
+  (ADDRESS_LIST =
+    (ADDRESS = (PROTOCOL = TCP)(HOST = selenium.duhs.duke.edu)(PORT = 1521))
+  )
+  (CONNECT_DATA =
+    (SERVICE_NAME = prod3)))
+
+#CALP =
+# (DESCRIPTION = 
+#  (ADDRESS_LIST =
+#    (LOAD_BALANCE=off)
+#    (FAILOVER=on)
+#    (ADDRESS = (PROTOCOL = TCP)(HOST = helium.duhs.duke.edu)(PORT = 1522))
+#    (ADDRESS = (PROTOCOL = TCP)(HOST = neon.duhs.duke.edu)(PORT = 1522))
+#  )
+#  (CONNECT_DATA =
+#    (SERVICE_NAME = calgbprod)))
+
+#CALP.DUHS.DUKE.EDU =
+# (DESCRIPTION = 
+#  (ADDRESS_LIST =
+#    (LOAD_BALANCE=off)
+#    (FAILOVER=on)
+#    (ADDRESS = (PROTOCOL = TCP)(HOST = helium.duhs.duke.edu)(PORT = 1522))
+#    (ADDRESS = (PROTOCOL = TCP)(HOST = neon.duhs.duke.edu)(PORT = 1522))
+#  )
+#  (CONNECT_DATA =
+#    (SERVICE_NAME = calgbprod)))
+
+#CALGBPROD =
+# (DESCRIPTION = 
+#  (ADDRESS_LIST =
+#    (LOAD_BALANCE=off)
+#    (FAILOVER=on)
+#    (ADDRESS = (PROTOCOL = TCP)(HOST = helium.duhs.duke.edu)(PORT = 1522))
+#    (ADDRESS = (PROTOCOL = TCP)(HOST = neon.duhs.duke.edu)(PORT = 1522))
+#  )
+#  (CONNECT_DATA =
+#    (SERVICE_NAME = calgbprod)))
+
+#PROD1HE =
+# (DESCRIPTION = 
+#  (ADDRESS_LIST =
+#    (ADDRESS = (PROTOCOL = TCP)(HOST = helium.duhs.duke.edu)(PORT = 1522))
+#  )
+#  (CONNECT_DATA =
+#    (SERVICE_NAME = PROD1HE2)))
+
+#PROD1NE =
+# (DESCRIPTION = 
+#  (ADDRESS_LIST =
+#    (ADDRESS = (PROTOCOL = TCP)(HOST = neon.duhs.duke.edu)(PORT = 1522))
+#  )
+#  (CONNECT_DATA =
+#    (SERVICE_NAME = PROD1NE)))
+	
+# ##########################################################################
+# DEVELOPMENT                                                              #
+# ##########################################################################
+
+RDTS =
+  (DESCRIPTION =
+    (ADDRESS = (PROTOCOL = TCP)(HOST = boron.duhs.duke.edu)(PORT = 1521))
+    (CONNECT_DATA =
+      (SERVER = DEDICATED)
+      (SERVICE_NAME = rdts)))
+	
+BETA1 =
+  (DESCRIPTION =
+    (ADDRESS = (PROTOCOL = TCP)(HOST = barium.duhs.duke.edu)(PORT = 1521))
+    (CONNECT_DATA =
+      (SERVER = DEDICATED)
+      (SERVICE_NAME = beta1)
+    )
+  )
+
+ARCH1 =
+  (DESCRIPTION =
+    (ADDRESS = (PROTOCOL = TCP)(HOST = boron.duhs.duke.edu)(PORT = 1521))
+    (CONNECT_DATA =
+      (SERVER = DEDICATED)
+      (SERVICE_NAME = arch1)
+    )
+  )
+
+POST1 =
+  (DESCRIPTION =
+    (ADDRESS = (PROTOCOL = TCP)(HOST = neptunium.duhs.duke.edu)(PORT = 1521))
+    (CONNECT_DATA =
+      (SERVER = DEDICATED)
+      (SERVICE_NAME = post1)
+    )
+  )
+
+PROT1 =
+  (DESCRIPTION =
+    (ADDRESS = (PROTOCOL = TCP)(HOST = boron.duhs.duke.edu)(PORT = 1521))
+    (CONNECT_DATA =
+      (SERVER = DEDICATED)
+      (SERVICE_NAME = prot1)
+    )
+  )
+
+#DEVEMREP =
+#  (DESCRIPTION =
+#    (ADDRESS = (PROTOCOL = TCP)(HOST = gadolinium.duhs.duke.edu)(PORT = 1521))
+#    (CONNECT_DATA =
+#      (SERVER = DEDICATED)
+#      (SERVICE_NAME = devemrep.duhs.duke.edu)
+#    )
+#  )
+
+#OLD_CALD =
+# (DESCRIPTION = 
+#  (ADDRESS_LIST =
+#    (ADDRESS = (PROTOCOL = TCP)(HOST = bromine.duhs.duke.edu)(PORT = 1521))
+#  )
+#  (CONNECT_DATA =
+#     (SERVICE_NAME = DEVL1.calgb)))
+
+# Leaving this connection in for backwards compatibility
+CALD =
+ (DESCRIPTION = 
+  (ADDRESS_LIST =
+    (ADDRESS = (PROTOCOL = TCP)(HOST = palladium.duhs.duke.edu)(PORT = 1521))
+  )
+  (CONNECT_DATA =
+     (SERVICE_NAME = DEVL2)))
+
+# Adding this connection for backward compatibility
+CALD.DUHS.DUKE.EDU =
+ (DESCRIPTION = 
+  (ADDRESS_LIST =
+    (ADDRESS = (PROTOCOL = TCP)(HOST = palladium.duhs.duke.edu)(PORT = 1521))
+  )
+  (CONNECT_DATA =
+     (SERVICE_NAME = DEVL2)))
+
+#TEST32 =
+#  (DESCRIPTION =
+#    (ADDRESS = (PROTOCOL = TCP)(HOST = cadmium.duhs.duke.edu)(PORT = 1521))
+#    (CONNECT_DATA =
+#      (SERVER = DEDICATED)
+#      (SERVICE_NAME = test1)
+#    )
+#  )
+
+TEST1 =
+  (DESCRIPTION =
+    (ADDRESS = (PROTOCOL = TCP)(HOST = actinium.duhs.duke.edu)(PORT = 1521))
+    (CONNECT_DATA =
+      (SERVER = DEDICATED)
+      (SERVICE_NAME = test1)
+    )
+  )
+
+#OLD_DEVL1 =
+# (DESCRIPTION = 
+#  (ADDRESS_LIST =
+#    (ADDRESS = (PROTOCOL = TCP)(HOST = bromine.duhs.duke.edu)(PORT = 1521))
+#  )
+#  (CONNECT_DATA =
+#     (SERVICE_NAME = DEVL1.calgb)))
+
+# Leaving this connection in for backwards compatibility
+DEVL1 =
+ (DESCRIPTION = 
+  (ADDRESS_LIST =
+    (ADDRESS = (PROTOCOL = TCP)(HOST = palladium.duhs.duke.edu)(PORT = 1521))
+  )
+  (CONNECT_DATA =
+     (SERVICE_NAME = DEVL2)))
+
+DEVL2 =
+ (DESCRIPTION = 
+  (ADDRESS_LIST =
+    (ADDRESS = (PROTOCOL = TCP)(HOST = palladium.duhs.duke.edu)(PORT = 1521))
+  )
+  (CONNECT_DATA =
+     (SERVICE_NAME = DEVL2)))
